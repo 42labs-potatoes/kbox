@@ -42,9 +42,6 @@ group :development, :test do
   gem 'pry'
 end
 
-<<<<<<< HEAD
 group :test do
   gem 'pry'
 end
-=======
->>>>>>> home page serach bar
