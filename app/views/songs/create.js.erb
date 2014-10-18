@@ -1,0 +1,9 @@
+<% unless @song.errors.empty? %>
+$('.playlist').html('no result');
+alert('oikok');
+<% else %>
+var html = '<div class="upcoming-songs">'
+    + '<p><%= @song.name %></p>'
+    + '</div>';
+$('.playlist-items').append(html);
+<% end %>

@@ -1,18 +1,18 @@
 class Song < ActiveRecord::Base
 
-  YT_LINK_FORMAT = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/i
+  # YT_LINK_FORMAT = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&v\?]*).*/i
   belongs_to :playlist
 
   # validates_presence_of :name, :playlist_id
-  validate :link, prqesence: true, format: YT_LINK_FORMAT
+  validate :uid, presence: true
   # validate :uid, length: { is: 11}
-  before_create :ensure_uid
+  before_create :get_additional_info
 
-  def ensure_uid
-    uid = link.match(YT_LINK_FORMAT)
-    self.uid = uid[2] if uid && uid[2]
-    get_additional_info
-  end
+  # def ensure_uid
+  #   uid = link.match(YT_LINK_FORMAT)
+  #   self.uid = uid[2] if uid && uid[2]
+  #   get_additional_info
+  # end
 
   private
 

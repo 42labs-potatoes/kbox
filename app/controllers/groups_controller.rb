@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @group = Group.find(params[:id])
   end
 
   def new
@@ -30,20 +31,20 @@ class GroupsController < ApplicationController
     end
   end
 
-  def events
-    response.header['Content-Type'] = 'text/event-stream'
-    redis = Redis.new
-    redis.subscribe('songs.create') do |on|
-      on.message do |event, data|
-        response.stream.write("data: #{data}\n\n")
-      end
-    end
-  rescue IOError
-    logger.info 'Stream closed.'
-  ensure
-    redis.quit
-    response.stream.close
-  end
+  # def events
+  #   response.header['Content-Type'] = 'text/event-stream'
+  #   redis = Redis.new
+  #   redis.subscribe('songs.create') do |on|
+  #     on.message do |event, data|
+  #       response.stream.write("data: #{data}\n\n")
+  #     end
+  #   end
+  # rescue IOError
+  #   logger.info 'Stream closed.'
+  # ensure
+  #   redis.quit
+  #   response.stream.close
+  # end
 
   def update
     respond_to do |format|

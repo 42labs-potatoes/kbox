@@ -16,38 +16,22 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(song_params)
+    playlist_id = Group.find(params[:group_id]).playlist.id
+    @song = Song.create(uid: params[:uid], playlist_id: playlist_id)
 
     respond_to do |format|
-      if @song.save
-        $redis.publish('songs.create', @song.to_json)
-        format.html { redirect_to action: "index" }
-        format.json { render :show, status: :created, location: @song }
-      else
-        format.html { render :new }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
-      end
+      # $redis.publish('songs.create', @song.to_json)
+      format.js
     end
   end
 
   def search
     client = YouTubeIt::OAuth2Client.new(dev_key: 'AIzaSyAfdk9o_YixCCW0SuKZO4DWcoARtXvnjps')
     @results = client.videos_by(query: params[:search_term]).videos
+    @group_id = params[:group_id]
 
     respond_to do |format|
       format.js
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @song.update(song_params)
-        format.html { redirect_to @song, notice: 'Song was successfully updated.' }
-        format.json { render :show, status: :ok, location: @song }
-      else
-        format.html { render :edit }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
-      end
     end
   end
 
@@ -62,9 +46,5 @@ class SongsController < ApplicationController
   private
     def set_song
       @song = Song.find(params[:id])
-    end
-
-    def song_params
-      params.require(:song).permit(:name, :playlist_id, :link)
     end
 end
