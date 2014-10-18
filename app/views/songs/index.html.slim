@@ -1,0 +1,24 @@
+.jumbotron
+  .container
+    h1 Share your videos with the team!
+    p Click to share your song
+    p
+      = link_to 'Add video now!', new_song_path, class: 'btn btn-primary'
+  .container
+    iframe width="#{200}" height="#{200}" src="http://www.youtube.com/embed/#{"gS9o1FAszdk"}" frameborder="0"
+  .container
+    h1 Latest videos
+    #player-wrapper
+    -@songs.each do |song|
+      .row
+        .col-md-4
+          .yt-video.thumbnail
+            =image_tag "http://img.youtube.com/vi/#{song.uid}/mqdefault.jpg", alt: song.name, class: 'yt_preview img-rounded', :"data-uid" => song.uid
+            .caption
+              h5
+                =song.name
+              p
+                = "Duration: #{song.duration}"
+              p
+                span.glyphicon.glyphicon-thumbs-up
+                span.glyphicon.glyphicon-thumbs-downØ

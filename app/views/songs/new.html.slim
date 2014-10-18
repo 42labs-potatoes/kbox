@@ -1,0 +1,9 @@
+.container
+  h1 New Song
+  =form_for @song do |f|
+    .form-group
+      =f.label :link
+      =f.text_field :link, class: 'form-control', required: true
+      span.help-block A Link to the video on Youtube
+    .btn.btn-default
+      =f.submit

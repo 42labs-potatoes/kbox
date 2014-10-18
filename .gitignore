@@ -40,7 +40,7 @@ db/*.sqlite3
 
 
 # RubyMine project files
-.idea
+.idea/*
 
 # Environment files that may contain sensitive data
 .env
