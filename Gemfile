@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 #Frontend
 gem "slim-rails"
 
+#Develoment
+gem "pry-rails", :group => :development
+
 gem 'rails', '4.1.5'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
