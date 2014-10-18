@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Youtube url:</strong>
+  <%= @playlist.youtube_url %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @playlist.group_id %>
+</p>
+
+<%= link_to 'Edit', edit_playlist_path(@playlist) %> |
+<%= link_to 'Back', playlists_path %>
