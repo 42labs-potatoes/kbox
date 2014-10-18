@@ -17,7 +17,6 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
-    @song.playlist_id = 1;
 
     respond_to do |format|
       if @song.save
