@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#Frontend
+gem "slim-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
@@ -37,4 +39,3 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
