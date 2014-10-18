@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-  include ActionController::Live
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -18,6 +17,7 @@ class GroupsController < ApplicationController
   end
 
   def create
+    response.headers["Content-Type"] = "text/javascript"
     @group = Group.new(group_params)
 
     respond_to do |format|
@@ -30,21 +30,6 @@ class GroupsController < ApplicationController
       end
     end
   end
-
-  # def events
-  #   response.header['Content-Type'] = 'text/event-stream'
-  #   redis = Redis.new
-  #   redis.subscribe('songs.create') do |on|
-  #     on.message do |event, data|
-  #       response.stream.write("data: #{data}\n\n")
-  #     end
-  #   end
-  # rescue IOError
-  #   logger.info 'Stream closed.'
-  # ensure
-  #   redis.quit
-  #   response.stream.close
-  # end
 
   def update
     respond_to do |format|

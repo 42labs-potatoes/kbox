@@ -7,9 +7,10 @@ Rails.application.routes.draw do
 
 
   resources :groups do
-    collection { get :events }
     resource :playlist do
-      resources :songs
+      resources :songs do
+        collection { get :events }
+      end
     end
   end
 
