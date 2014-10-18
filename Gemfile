@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #Frontend
-gem "slim-rails"
+gem 'slim-rails'
 
 #Develoment
 gem "pry-rails", :group => :development
@@ -33,11 +33,18 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'shoulda-matchers'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry'
 end
 
+<<<<<<< HEAD
 group :test do
   gem 'pry'
 end
+=======
+>>>>>>> home page serach bar
