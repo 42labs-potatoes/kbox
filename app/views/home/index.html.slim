@@ -11,7 +11,7 @@
         .search-field
 
           = form_tag('/home/search', method: :get)
-            = text_field_tag :query, nil, class: 'form-control', placeholder: 'Search'
+            = text_field_tag :query, nil, class: 'form-control', placeholder: 'find your friends'
 
     = link_to 'New Group', new_group_path
 
@@ -20,4 +20,4 @@
       h2.group-name
         - @public_groups.each do |group|
           .col-md-6.col-md-offset-5
-            = group.name
+            = link_to group.name, group_path(group)
