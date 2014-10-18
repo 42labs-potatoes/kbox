@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :playlists
 
-  resources :groups
+  resources :groups do
+    collection { get :events }
+  end
 
 
 end

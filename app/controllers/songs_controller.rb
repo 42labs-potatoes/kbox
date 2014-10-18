@@ -21,6 +21,7 @@ class SongsController < ApplicationController
 
     respond_to do |format|
       if @song.save
+        $redis.publish('songs.create', @song.to_json)
         format.html { redirect_to action: "index" }
         format.json { render :show, status: :created, location: @song }
       else
