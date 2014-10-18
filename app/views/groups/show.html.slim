@@ -25,11 +25,19 @@ p#notice
         .col-md-9.col-xs-9
           .playlist-wrapper
             .row.video-player-wrapper
-              /iframe width="300" height="200" src="http://www.youtube.com/embed/#{"gS9o1FAszdk"}" frameborder="0"
-            .row.playlist
+              h1
+                | SONG NAME
+              iframe width="500" height="500" src="http://www.youtube.com/embed/#{"gS9o1FAszdk"}" frameborder="0"
+              hr
+            .playlist-items
               h2
                 | Coming Up...
-            .playlist-items
               - @group.playlist.songs.each do |song|
-                p
-                 =song.name
+                .playlist-item
+                  .video-preview
+                    img.image-rounded src="http://img.youtube.com/vi/#{song.uid}/1.jpg"
+                  .title
+                    p
+                      =song.name
+                  .upvote
+                    |Up

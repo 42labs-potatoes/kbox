@@ -11,6 +11,35 @@
   }
 }
 
+h2 {
+  text-align: left;
+}
+
 .playlist-container {
   max-width: 300px;
+}
+
+.playlist-item {
+  * {
+    display: inline-block;
+  }
+}
+
+.video-preview {
+  margin: 0 30px 15px 0;
+}
+
+
+.title {
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+}
+
+.playlist-wrapper {
+  background-color: #32596B;
+  text-align: center;
+  padding: 100px;
 }
