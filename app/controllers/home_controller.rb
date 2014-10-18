@@ -2,11 +2,7 @@ class HomeController < ApplicationController
   before_action :set_public_groups
 
   def index
-<<<<<<< HEAD
     @groups = Group.all
-=======
-
->>>>>>> home page serach bar
   end
 
   def search
