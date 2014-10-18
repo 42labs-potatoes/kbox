@@ -1,12 +1,25 @@
-.row
-  .col-md-12
-    #group
-      .search-container
-        .row
-          .col-md-4.col-md-offset-4.col-xs-8.col-xs-offset-1
-            = text_field :search_songs, nil, class: "form-control", placeholder: "Search Songs"
+=======
+h1
+  | Listing groups
 
-          .col-md-4.col-xs-3
-            = button_tag :"Search" , class: "btn btn-primary btn-default"
+table
+  thead
+    tr
+      th
+        | Name
+      th colspan="3"
+  tbody
+    -  @groups.each do |group|
+      tr
+        td
+          = group.name
+        td
+          = link_to 'Show', group
+        td
+          = link_to 'Edit', edit_group_path(group)
+        td
+          = link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }
 
-      .playlist-container
+br
+
+= link_to 'New Group', new_group_path

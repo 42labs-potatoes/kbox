@@ -831,6 +831,7 @@ Migrating to AddOrderToSongs (20141018031315)
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at 2014-10-18 11:31:54 +0800
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Processing by HomeController#index as HTML
@@ -4842,3 +4843,441 @@ Started GET "/assets/music-background.jpg" for 127.0.0.1 at 2014-10-18 14:25:50 
   [1m[35mGroup Load (0.3ms)[0m  SELECT  "groups".* FROM "groups"   ORDER BY "groups"."id" ASC LIMIT 1
   [1m[36mPlaylist Load (0.3ms)[0m  [1mSELECT "playlists".* FROM "playlists"  WHERE "playlists"."group_id" = ?[0m  [["group_id", 1]]
   [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "playlists"  WHERE "playlists"."group_id" = ?  [["group_id", 1]]
+=======
+Started GET "/" for 127.0.0.1 at 2014-10-18 12:11:03 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.slim within layouts/application (18.6ms)
+Completed 200 OK in 1711ms (Views: 1702.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/framework_and_overrides.css?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/playlists.css?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/playlists.js?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-18 12:11:05 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.slim within layouts/application (0.2ms)
+Completed 200 OK in 79ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/framework_and_overrides.css?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/playlists.css?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/playlists.js?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-18 12:18:08 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-18 12:30:22 +0800
+Processing by HomeController#index as HTML
+  Rendered home/index.html.slim within layouts/application (0.1ms)
+Completed 200 OK in 71ms (Views: 71.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/framework_and_overrides.css?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/playlists.css?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/playlists.js?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2014-10-18 12:30:23 +0800
+
+
+Started GET "/group" for 127.0.0.1 at 2014-10-18 12:34:05 +0800
+
+ActionController::RoutingError (No route matches [GET] "/group"):
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jccf/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jccf/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jccf/.rbenv/versions/2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jccf/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/jccf/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
+  Rendered /Users/jccf/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.4ms)
+  Rendered /Users/jccf/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.1ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+Processing by GroupsController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+  Rendered groups/index.html.slim within layouts/application (8.3ms)
+Completed 200 OK in 82ms (Views: 78.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/framework_and_overrides.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/playlists.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/playlists.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:08 +0800
+
+
+Started GET "/groups" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+Processing by GroupsController#index as HTML
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  Rendered groups/index.html.slim within layouts/application (4.2ms)
+Completed 200 OK in 69ms (Views: 68.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/framework_and_overrides.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/playlists.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/playlists.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-18 12:34:35 +0800
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2014-10-18 12:34:40 +0800
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered groups/show.html.slim within layouts/application (1.9ms)
+Completed 200 OK in 72ms (Views: 70.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered groups/show.html.slim within layouts/application (2.7ms)
+Completed 200 OK in 68ms (Views: 66.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/framework_and_overrides.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/playlists.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/playlists.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:33 +0800
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2014-10-18 12:35:38 +0800
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered groups/show.html.slim within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/jccf/workplace/kbox/app/views/groups/show.html.slim:9: syntax error, unexpected ')'
+...it', edit_group_path(@group) |))).to_s)); 
+...                               ^
+/Users/jccf/workplace/kbox/app/views/groups/show.html.slim:12: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/jccf/workplace/kbox/app/views/groups/show.html.slim:14: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/groups/show.html.slim:9: syntax error, unexpected ')'
+  app/views/groups/show.html.slim:12: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/groups/show.html.slim:14: syntax error, unexpected keyword_end, expecting ')'
+
+
+  Rendered /Users/jccf/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/jccf/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/jccf/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jccf/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.2ms)
+
+
+Started GET "/groups/1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGroup Load (0.1ms)[0m  [1mSELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered groups/show.html.slim within layouts/application (2.6ms)
+Completed 200 OK in 81ms (Views: 80.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/framework_and_overrides.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/songs.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/playlists.css?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/playlists.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/songs.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-18 12:35:50 +0800
+
+
+Started GET "/groups/1/edit" for 127.0.0.1 at 2014-10-18 12:35:59 +0800
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGroup Load (0.1ms)[0m  SELECT  "groups".* FROM "groups"  WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered groups/_form.html.slim (9.6ms)
+  Rendered groups/edit.html.slim within layouts/application (12.3ms)
+Completed 200 OK in 87ms (Views: 85.5ms | ActiveRecord: 0.1ms)
+>>>>>>> merge
