@@ -1,9 +1,11 @@
 .row
   .col-md-12
-    .col-md-2.col-md-offset-6
-      h1.title
-        | kBox
+    .container
+      .col-md-6.col-md-offset-3.col-xs-12
+        h1.title
+          | kBox
 
-      .search-field
-        = text_field :serach_groups, nil, class: "form-control", placeholder: "Search"
+        .search-field
+          = text_field :serach_groups, nil, class: "form-control", placeholder: "Search"
+
     .groups-container
