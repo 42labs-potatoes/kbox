@@ -19,6 +19,14 @@ table
         td
           = link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }
 
-br
+  br
 
-= link_to 'New Group', new_group_path
+  = link_to 'New Group', new_group_path
+
+      h2.group-name
+        .col-md-6.col-md-offset-5
+          = @group.name
+          |  Group
+
+      .playlist-container
+        - @group.playlists.each do |playlist|

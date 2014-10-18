@@ -3,5 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #group {
-  padding-top: 100px;
+  padding-top: 40px;
+
+  .group-name {
+    color: #fff;
+    padding-top: 45px;
+  }
 }
