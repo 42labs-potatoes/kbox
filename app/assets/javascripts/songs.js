@@ -7,7 +7,8 @@ var source = new EventSource(path);
 source.addEventListener('message', function(e) {
   var song = $.parseJSON(e.data)
   var html = '<div class="playlist-item">'
-    + '<div class="video-preview">'
+    + '<div class="video-preview" data-uid='
+    + song.uid +'>'
     + '<img class="image-rounded" src="http://img.youtube.com/vi/'
     + song.uid + '/1.jpg">'
     + '</div>'
