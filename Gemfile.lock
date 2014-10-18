@@ -104,9 +104,12 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
 <<<<<<< HEAD
+<<<<<<< HEAD
     shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
 =======
+=======
+>>>>>>> brach_1
     slim (2.0.3)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
@@ -115,7 +118,10 @@ GEM
       activesupport (>= 3.0, < 4.2)
       railties (>= 3.0, < 4.2)
       slim (~> 2.0)
+<<<<<<< HEAD
 >>>>>>> added home page and controller
+=======
+>>>>>>> brach_1
     spring (1.1.3)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -155,10 +161,14 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
 <<<<<<< HEAD
+<<<<<<< HEAD
   shoulda-matchers
 =======
   slim-rails
 >>>>>>> added home page and controller
+=======
+  slim-rails
+>>>>>>> brach_1
   spring
   sqlite3
   turbolinks
