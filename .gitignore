@@ -34,7 +34,6 @@ db/*.sqlite3
 /capybara-*.html
 /gems
 
-
 # Mac finder artifacts
 .DS_Store
 
@@ -44,3 +43,5 @@ db/*.sqlite3
 
 # Environment files that may contain sensitive data
 .env
+
+db/development.sqlite3

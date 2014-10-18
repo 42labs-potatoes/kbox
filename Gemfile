@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 #Frontend
 gem 'slim-rails'
 
-#Develoment
-gem "pry-rails", :group => :development
 
 gem 'rails', '4.1.5'
 gem 'sqlite3'
@@ -39,9 +37,5 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'pry'
-end
-
-group :test do
-  gem 'pry'
+  gem 'pry-rails'
 end

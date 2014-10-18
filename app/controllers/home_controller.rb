@@ -2,7 +2,6 @@ class HomeController < ApplicationController
   before_action :set_public_groups
 
   def index
-    @groups = Group.all
   end
 
   def search

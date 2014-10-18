@@ -1,17 +1,11 @@
 p#notice
   = notice
 
-P
-  strong
-    | Name:
-  = @group.name
-
-= link_to 'Edit', edit_group_path(@group)
-= link_to 'Back', groups_path
 
 .row
   .col-md-12
     #group
+
       .search-container
         .row
           .col-md-4.col-md-offset-4.col-xs-8.col-xs-offset-1
@@ -22,3 +16,10 @@ P
 
       .playlist-container
 
+      .group-container
+        h1
+          = @group.name
+
+          = link_to 'Edit', edit_group_path(@group)
+          = link_to 'Back', groups_path
+      .playlists-container
