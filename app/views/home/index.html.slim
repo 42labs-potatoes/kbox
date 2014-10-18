@@ -4,20 +4,17 @@
       .notice
         = flash[:notice]
     .container
-      .col-md-6.col-md-offset-3.col-xs-12
-        h1.title
-          | kBox
+      .row
+        .col-md-6.col-xs-6
+          .header-caption
+            h1 music is meant to be shared
 
-        .search-field
+          .search-field
+            = form_tag('/home/search', method: :get)
+              = text_field_tag :query, nil, class: 'form-control', placeholder: 'Search'
 
-          = form_tag('/home/search', method: :get)
-            = text_field_tag :query, nil, class: 'form-control', placeholder: 'find your friends'
-
-    = link_to 'New Group', new_group_path
-
-    .groups-container
-
-      h2.group-name
-        - @public_groups.each do |group|
-          .col-md-6.col-md-offset-5
-            = link_to group.name, group_path(group)
+        .col-md-6.col-xs-6
+          .groups-container.pull-right
+            -  @public_groups.each do |group|
+              .group-name
+                = link_to group.name, group_path(group)

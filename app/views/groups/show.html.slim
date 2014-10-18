@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 p#notice
   = notice
 
@@ -12,13 +13,34 @@ p#notice
 
           .col-md-4.col-xs-3
             = button_tag :'Search' , class: 'btn btn-primary btn-default'
+=======
+.row
+  .col-md-12
+    #group
+      /.search-container
+      /  .row
+      /    = form_tag('/songs/search', method: :get, remote: true)
+      /      .col-md-4.col-md-offset-4.col-xs-8.col-xs-offset-1
+      /        = text_field_tag :search_term, nil, class: 'form-control', placeholder: 'Search Song'
+      /      .col-md-4.col-xs-3
+      /        = button_tag :"Search" , class: "btn btn-primary btn-default"
+      /
+      /.playlist-container
 
-      .playlist-container
+      .row
+        .col-md-3.col-xs-3
+          .search-song-result-wrapper
+            .row
+              = form_tag('/songs/search', method: :get, remote: true)
+                = text_field_tag :search_term, nil, class: 'form-control', placeholder: 'Search'
+            .search-song-result
 
-      .group-container
-        h1
-          = @group.name
-
-          = link_to 'Edit', edit_group_path(@group)
-          = link_to 'Back', groups_path
-      .playlists-container
+        .col-md-9.col-xs-9
+          .playlist-wrapper
+            .row.video-player-wrapper
+              iframe width="300" height="200" src="http://www.youtube.com/embed/#{"gS9o1FAszdk"}" frameborder="0"
+            .row.playlist
+              h2
+                | Coming Up...
+              /= @group.current_playlist.songs do |song|
+              /  song.name

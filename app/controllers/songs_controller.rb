@@ -30,6 +30,15 @@ class SongsController < ApplicationController
     end
   end
 
+  def search
+    client = YouTubeIt::OAuth2Client.new(dev_key: 'AIzaSyAfdk9o_YixCCW0SuKZO4DWcoARtXvnjps')
+    @results = client.videos_by(query: params[:search_term]).videos
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def update
     respond_to do |format|
       if @song.update(song_params)
