@@ -2,7 +2,7 @@
 /  = notice
 
 .row
-  .col-md-12
+  .col-md-12 style="margin-right:0; padding-right: 0;"
     #group
       /.search-container
       /  .row
@@ -24,16 +24,16 @@
                 = text_field_tag :search_term, nil, class: 'form-control', placeholder: 'Search'
             .search-song-result
 
-        .col-md-9.col-xs-9
+        .col-md-9.col-xs-9 style="margin-right:0;  background-color: #32596B;"
           .playlist-wrapper
             .row.video-player-wrapper
               h1
-                | Now playing: SONG NAME
+                | Now playing:
               /iframe width="640" height="360" src="http://www.youtube.com/embed/#{"gS9o1FAszdk"}" frameborder="0" allowfullscreen
               hr
             .playlist-items
               h2
-                | Coming Up...
+                = "#{@group.name}'s  Playlist"
               - unless @group.playlist.songs.empty?
                 - @group.playlist.songs.each do |song|
                   .playlist-item
@@ -47,9 +47,9 @@
                         | vote:
                         = song.vote_count
                       = link_to("/songs/#{song.id}/votes?upvote=true", method: :post, remote: true) do
-                        | up
-                      span
-                        | view:
+                        i class="glyphicon glyphicon-thumbs-up"
+                      span.views-count
+                        =" view:"
                         = song.times
                       = link_to("/songs/#{song.id}", method: :delete, remote: true) do
                         | DELETE

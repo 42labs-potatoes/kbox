@@ -53,10 +53,16 @@ h2 {
 
 .upvote span {
   margin-right: 15px;
+  * {
+    color: #DDDDDD;
+  }
+}
+
+.upvote .views-count {
+  margin-left: 6px;
 }
 
 .playlist-wrapper {
-  background-color: #32596B;
   padding: 55px 75px 75px 75px;
 
   h1 {
@@ -81,6 +87,8 @@ h2 {
   .thumbnail {
     border: none;
     overflow: hidden;
+    position: relative;
+    margin-bottom: 5em;
   }
 
   .thumbnail > a {
@@ -98,5 +106,12 @@ h2 {
     color: #4e4e4e;
     margin-bottom: 15px;
     border-bottom: 1px solid #223c48;
+  }
+
+  .thumbnail a > img {
+    right: 0;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
   }
 }

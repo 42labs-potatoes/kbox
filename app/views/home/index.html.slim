@@ -3,7 +3,7 @@
 /    - if flash[:notice]
 /      .notice
 /        = flash[:notice]
-.row
+.row#home-page
   .col-md-4.col-md-offset-1.col-xs-12
     .header-caption
       h1 music is meant to be shared and enjoyed together.
@@ -24,8 +24,8 @@
     .groups-container.pull-right
       h3 Browse and listen in on group's playlist!
       ul.list-group
-        - @groups.each do |group|
-          li.list-group-item
+        - @groups.each_with_index do |group, index|
+          li.list-group-item class=(index.odd? ? "odd-item" : "even-item")
             .group-name
               = link_to group.name, group_path(group)
             - if group.current_song
@@ -33,6 +33,7 @@
                 | Currently listening to:
                 br
               span.current-song
+                = image_tag "play_button.png"
                 = group.current_listening_to
 
 

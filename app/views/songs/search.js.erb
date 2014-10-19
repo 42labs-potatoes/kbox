@@ -7,7 +7,7 @@
            + '<img class="image-rounded" src="http://img.youtube.com/vi/<%= result.video_id.split(//).last(11).join %>/1.jpg"></img>'
            + '<p><%= result.title%></p>'
            + '<a href="<%= @group_id%>/playlist/songs?uid=<%= result.video_id.split(//).last(11).join %>" data-remote="true"  data-method="post">'
-           + 'Add </a>'
+           + ' <%= image_tag "add_to_playlist.png" %> </a>'
            + '</div>'
     $('.search-song-result').append(html);
 
