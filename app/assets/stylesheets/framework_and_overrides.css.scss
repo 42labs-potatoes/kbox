@@ -11,9 +11,31 @@
   border-bottom: 2px solid #1a2e37;
   border-radius: 0px;
   background-color: #4a849f;
+  padding: 0 0 0 125px;
 
   h1 {
     color: #fff;
     font-family: "Gotham-Bold", sans-serif;
   }
 }
+
+  .list-group-item {
+    border: none;
+  }
+
+  .list-group-item:first-child {
+    border-radius: 0px;
+  }
+
+  .list-group-item:last-child {
+    border-radius: 0px;
+  }
+
+  .form-control {
+    border-radius: 0px;
+    text-align: center;
+    margin-bottom: 15px;
+    height: 45px;
+    border: 1px solid #1a2e37;
+  }
+

@@ -4,7 +4,11 @@
 
 
 body {
-//  background-image: img-url("unsplash-kitsune-4.jpg");
+  background-image: image-url("unsplash-kitsune-4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+//  width: 100%;
 }
 
   h1 {
@@ -12,3 +16,78 @@ body {
     font-family: "HelveticaNeue-Light", sans-serif;
     text-align: left;
 }
+
+  .list-group-item {
+    text-align: center;
+    border: 2px solid black;
+    padding: 25px 75px 25px 75px;
+
+    p {
+      color: #4a849f;
+      margin: 15px 0 15px 0;
+      font-size: 11px;
+      font-family: "HelveticaNeue-Italic", sans-serif;
+    }
+    span {
+      font-family: "Helvetica-Bold", sans-serif;
+      font-size: 18px;
+      color: #fff;
+    }
+  }
+
+  .group-name a:nth-child(odd) {
+    color: #fff;
+    font-family: "Gotham-Bold", sans-serif;
+    font-size: 18px;
+    text-decoration: underline;
+  }
+
+  .list-group {
+    li.list-group-item:nth-child(odd) {
+      background-color: #32596B;
+    }
+  }
+
+  .list-group {
+    margin: 15px 25px 0 0;
+  }
+
+  .header-caption {
+    margin: 100px 0 100px 0;
+
+    h1 {
+      color: black;
+      font-family: "Gotham-Bold", sans-serif;
+    }
+  }
+
+  .groups-container h3 {
+    margin-top: 100px;
+    font-family: "HelveticaNeue-Light", sans-serif;
+    font-size: 16px;
+  }
+
+  .group-field input[type="submit"] {
+    margin-left: 15px;
+    border-radius: 0px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #4a849f;
+    font-size: 16px;
+
+    &:hover {
+      background-color: #4a849f;
+      border: 1px solid #4a849f;
+      transition: all ease 0.5s;
+      color: #fff;
+    }
+  }
+
+  .group-field input[type="checkbox"] {
+    margin-right: 5px;
+    border: 1px solid #4a849f;
+  }
+
+  .group-field label {
+    color: #4a849f;
+  }
+
