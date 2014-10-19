@@ -6,7 +6,10 @@ class Playlist < ActiveRecord::Base
   validates_presence_of :group_id
 
   def play_next_song
-    songs.first.update_attribute(:position, last_position+1)
+    song = songs.first
+    song.votes.destroy_all
+    song.update_columns(position: last_position+1)
+    # reposition_by_votes
     normalize_song_positions
   end
 
@@ -24,8 +27,12 @@ class Playlist < ActiveRecord::Base
 
   private
 
+  def sort_by_votes
+    self.songs.sort_by(&:vote_count).reverse
+  end
+
   def normalize_song_positions
-    songs.each_with_index do |song, index|
+    sort_by_votes.each_with_index do |song, index|
       song.update_attribute(:position, index+1)
     end
   end

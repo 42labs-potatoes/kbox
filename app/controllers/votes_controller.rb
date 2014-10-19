@@ -11,6 +11,7 @@ class VotesController < ApplicationController
       #   song_hash = {uid: song.uid, id: song.id, name: song.name, vote: song.vote_count}
       #   result << song_hash
       # end
+
       $redis.publish('songs.create', result.to_json)
       render json: {message: 'upvoted!'}
     else
