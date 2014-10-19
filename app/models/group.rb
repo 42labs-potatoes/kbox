@@ -7,7 +7,7 @@ class Group < ActiveRecord::Base
 
 
   def current_listening_to
-    cuurent_song.name if current_song
+    current_song.name if current_song
   end
 
   def current_song
