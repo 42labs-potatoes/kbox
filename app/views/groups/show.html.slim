@@ -45,7 +45,10 @@
                     .upvote
                       span
                         | vote:
-                        = song.votes.count
+                        = song.vote_count
                       = link_to("/songs/#{song.id}/votes?upvote=true", method: :post, remote: true) do
                         | up
+                      span
+                        | view:
+                        = song.times
 

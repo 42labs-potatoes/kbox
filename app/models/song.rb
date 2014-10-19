@@ -32,7 +32,7 @@ class Song < ActiveRecord::Base
   def self.get_song_hash(playlist_id)
     result = []
     Playlist.find(playlist_id).songs.each do |song|
-      song_hash = {uid: song.uid, id: song.id, name: song.name, vote: song.vote_count}
+      song_hash = {uid: song.uid, id: song.id, name: song.name, vote: song.vote_count, times: song.times}
       result << song_hash
     end
     result

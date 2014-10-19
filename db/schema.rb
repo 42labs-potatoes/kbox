@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019053908) do
+ActiveRecord::Schema.define(version: 20141019063258) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(version: 20141019053908) do
     t.datetime "updated_at"
     t.string   "link"
     t.integer  "integer"
-    t.integer  "times"
     t.string   "duration"
     t.string   "uid"
     t.integer  "position"
+    t.integer  "times",       default: 0
   end
 
   create_table "votes", force: true do |t|

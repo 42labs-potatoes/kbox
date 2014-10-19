@@ -26,6 +26,7 @@ source.addEventListener('message', function(e) {
       + '<span>vote:' + song.vote + '</span>'
 			+ '<a rel="nofollow" href="/songs/' + song.id
 			+'/votes?upvote=true" data-remote="true" data-method="post">up</a>'
+      + '<span>view:' + song.times +'</span>'
       + '</div>'
       + '</div>');
   });

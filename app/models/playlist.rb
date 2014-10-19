@@ -8,7 +8,9 @@ class Playlist < ActiveRecord::Base
   def play_next_song
     song = songs.first
     song.votes.destroy_all
-    song.update_columns(position: last_position+1)
+    binding.pry
+    song.update_columns(position: last_position+1, times: song.times+1)
+    binding.pry
     # reposition_by_votes
     normalize_song_positions
   end
@@ -28,13 +30,18 @@ class Playlist < ActiveRecord::Base
   private
 
   def sort_by_votes
-    self.songs.sort_by(&:vote_count).reverse
+    # self.songs.sort_by(&:vote_count).reverse
+    sorted_songs = self.songs.sort do |a,b|
+      [a.vote_count, b[:position]] <=> [b.vote_count, a[:position]]
+    end
+    sorted_songs.reverse
   end
 
   def normalize_song_positions
     sort_by_votes.each_with_index do |song, index|
       song.update_attribute(:position, index+1)
     end
+    binding.pry
   end
 
 end
