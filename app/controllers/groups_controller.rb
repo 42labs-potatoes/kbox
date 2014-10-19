@@ -17,30 +17,23 @@ class GroupsController < ApplicationController
   end
 
   def create
-    response.headers["Content-Type"] = "text/javascript"
-    @group = Group.new(group_params)
-
-    respond_to do |format|
-      if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
-        format.json { render :show, status: :created, location: @group }
-      else
-        format.html { render :new }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
+    @group = Group.new(name: params[:name], public: params[:public])
+    @group.build_playlist
+    if @group.save
+      redirect_to @group, notice: 'Group was successfully created.'
     end
   end
 
   def update
-    respond_to do |format|
-      if @group.update(group_params)
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
-        format.json { render :show, status: :ok, location: @group }
-      else
-        format.html { render :edit }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @group.update(group_params)
+    #     format.html { redirect_to @group, notice: 'Group was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @group }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @group.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def destroy

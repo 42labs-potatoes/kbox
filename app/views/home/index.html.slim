@@ -11,10 +11,25 @@
 
           .search-field
             = form_tag('/home/search', method: :get)
-              = text_field_tag :query, nil, class: 'form-control', placeholder: 'Search'
+              = text_field_tag :query, nil, class: 'form-control', placeholder: 'find your friends'
+
+          .group-field
+            = form_tag('/groups', method: :post)
+              = label_tag 'name', "Group Name"
+              = text_field_tag :name, nil, class: 'form-control', placeholder: 'group name'
+              = check_box_tag 'public', false
+              = label_tag 'public', 'Private'
+              = submit_tag
 
         .col-md-6.col-xs-6
           .groups-container.pull-right
-            -  @public_groups.each do |group|
-              .group-name
-                = link_to group.name, group_path(group)
+            ul.list-group
+              - @public_groups.each do |group|
+                li.list-group-item
+                  .group-name
+                    = link_to group.name, group_path(group)
+                  - unless group.playlist.songs.empty?
+                    p
+                      | Currently listening to:
+                      br
+                      = group.current_listening_to
