@@ -115,6 +115,4 @@ $(document).ready(function() {
     $('.playlist-items').append(html);
     if (! isPlaying) run();
   });
-
-
-})
+});
