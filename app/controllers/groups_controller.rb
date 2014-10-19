@@ -21,6 +21,8 @@ class GroupsController < ApplicationController
     @group.build_playlist
     if @group.save
       redirect_to @group, notice: 'Group was successfully created.'
+    else
+      redirect_to root_url
     end
   end
 

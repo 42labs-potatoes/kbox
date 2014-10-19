@@ -6,18 +6,14 @@ class Playlist < ActiveRecord::Base
   validates_presence_of :group_id
 
   def play_next_song
-    song = songs.first
-    if (song)
+    if song = songs.first
       song.votes.destroy_all
-      binding.pry
-      song.update_columns(position: last_position+1, times: song.times+1)
-      binding.pry
-      # reposition_by_votes
+      song.update_columns(position: last_position_in_playlist + 1, times: song.times + 1)
       normalize_song_positions
     end
   end
 
-  def last_position
+  def last_position_in_playlist
     all_song_positions = self.songs.all.map(&:position)
     all_song_positions.empty? ? 0 : all_song_positions.max
   end
@@ -43,7 +39,6 @@ class Playlist < ActiveRecord::Base
     sort_by_votes.each_with_index do |song, index|
       song.update_attribute(:position, index+1)
     end
-    binding.pry
   end
 
 end

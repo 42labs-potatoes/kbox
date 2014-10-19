@@ -80,6 +80,7 @@ h2 {
 .search-song-result {
   .thumbnail {
     border: none;
+    overflow: hidden;
   }
 
   .thumbnail > a {

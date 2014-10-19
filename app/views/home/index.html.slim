@@ -18,13 +18,13 @@
         = text_field_tag :name, nil, class: 'form-control', placeholder: 'Create a group'
         = check_box_tag 'public', false
         = label_tag 'public', 'Private'
-        = submit_tag
+        = submit_tag 'Create Groups'
 
   .col-md-3.col-md-offset-4.col-xs-12
     .groups-container.pull-right
       h3 Browse and listen in on group's playlist!
       ul.list-group
-        - @public_groups.each do |group|
+        - @groups.each do |group|
           li.list-group-item
             .group-name
               = link_to group.name, group_path(group)
