@@ -18,7 +18,7 @@ class Song < ActiveRecord::Base
 
   def get_additional_info
     begin
-      client = YouTubeIt::OAuth2Client.new(dev_key: 'AIzaSyAfdk9o_YixCCW0SuKZO4DWcoARtXvnjps')
+      client = YouTubeIt::OAuth2Client.new(dev_key: ENV[:YOUTUBE_DEVELOPER_KEY])
       song = client.video_by(uid)
       self.name = song.title
       self.duration = parse_duration(song.duration)

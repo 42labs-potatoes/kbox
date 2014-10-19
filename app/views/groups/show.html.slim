@@ -32,12 +32,13 @@ p#notice
             .playlist-items
               h2
                 | Coming Up...
-              - @group.playlist.songs.each do |song|
-                .playlist-item
-                  .video-preview data-uid="#{song.uid}"
-                    img.image-rounded src="http://img.youtube.com/vi/#{song.uid}/1.jpg"
-                  .title
-                    p
-                      =song.name
-                  .upvote
-                    |Up
+              - unless @group.playlist.songs.empty?
+                - @group.playlist.songs.each do |song|
+                  .playlist-item
+                    .video-preview data-uid="#{song.uid}"
+                      img.image-rounded src="http://img.youtube.com/vi/#{song.uid}/1.jpg"
+                    .title
+                      p
+                        =song.name
+                    .upvote
+                      |Up

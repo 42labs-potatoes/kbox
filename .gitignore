@@ -45,3 +45,5 @@ db/*.sqlite3
 .env
 
 db/development.sqlite3
+db/test.sqlite3
+*.rdb

@@ -28,7 +28,7 @@ class SongsController < ApplicationController
   end
 
   def search
-    client = YouTubeIt::OAuth2Client.new(dev_key: 'AIzaSyAfdk9o_YixCCW0SuKZO4DWcoARtXvnjps')
+    client = YouTubeIt::OAuth2Client.new(dev_key: ENV[:YOUTUBE_DEVELOPER_KEY])
     @results = client.videos_by(query: params[:search_term]).videos
     @group_id = params[:group_id]
 
