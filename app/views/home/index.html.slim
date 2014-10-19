@@ -24,8 +24,8 @@
     .groups-container.pull-right
       h3 Browse and listen in on group's playlist!
       ul.list-group
-        - @groups.each do |group|
-          li.list-group-item
+        - @groups.each_with_index do |group, index|
+          li.list-group-item class=(index.odd? ? "odd-item" : "even-item")
             .group-name
               = link_to group.name, group_path(group)
             - unless group.playlist.songs.empty?
