@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var makeVideoPlayer;
-  var currentVideo;
+  var currentVideoIndex = 0;
   window.ytPlayerLoaded = false;
   makeVideoPlayer = function(video) {
     var player_wrapper;
@@ -25,7 +25,8 @@ $(document).ready(function() {
           },
           'onStateChange': function(event) {
             if (event.data == YT.PlayerState.ENDED) {
-//              makeVideoPlayer($(this).next().data('uid'))
+              ++currentVideoIndex;
+              makeVideoPlayer($($('.video-preview')[currentVideoIndex]).data('uid'))
             }
           }
         }
@@ -52,7 +53,6 @@ $(document).ready(function() {
   setInterval(function(){
     $('.video-preview').off("click");
     $('.video-preview').click(function() {
-      currentVideo = $(this);
       makeVideoPlayer($(this).data('uid'));
     });
   }, 1000)

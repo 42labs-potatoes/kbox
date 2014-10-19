@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018041333) do
+ActiveRecord::Schema.define(version: 20141019021701) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 20141018041333) do
     t.integer  "playlist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "order"
     t.string   "link"
     t.integer  "vote"
     t.integer  "times"
     t.string   "duration"
     t.string   "uid"
+    t.integer  "position"
   end
 
 end

@@ -1,12 +1,14 @@
 class Song < ActiveRecord::Base
 
   # YT_LINK_FORMAT = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&v\?]*).*/i
+  default_scope { order('position ASC') }
   belongs_to :playlist
 
-  # validates_presence_of :name, :playlist_id
+  validates_presence_of :playlist_id, :uid
   validate :uid, presence: true
   # validate :uid, length: { is: 11}
   before_create :get_additional_info
+  before_save :ensure_position
 
   # def ensure_uid
   #   uid = link.match(YT_LINK_FORMAT)
@@ -14,11 +16,19 @@ class Song < ActiveRecord::Base
   #   get_additional_info
   # end
 
+  def ensure_position
+    unless self.position
+      # all_song_positions = Playlist.find(playlist_id).songs.all.map(&:position)
+      # self.position = all_song_positions.empty? ? 1 : all_song_positions.max + 1
+      self.position = Playlist.find(playlist_id).last_position + 1
+    end
+  end
+
   private
 
   def get_additional_info
     begin
-      client = YouTubeIt::OAuth2Client.new(dev_key: ENV[:YOUTUBE_DEVELOPER_KEY])
+      client = YouTubeIt::OAuth2Client.new(dev_key: ENV["YOUTUBE_DEVELOPER_KEY"])
       song = client.video_by(uid)
       self.name = song.title
       self.duration = parse_duration(song.duration)

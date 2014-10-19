@@ -28,7 +28,7 @@ class SongsController < ApplicationController
   end
 
   def search
-    client = YouTubeIt::OAuth2Client.new(dev_key: ENV[:YOUTUBE_DEVELOPER_KEY])
+    client = YouTubeIt::OAuth2Client.new(dev_key: ENV["YOUTUBE_DEVELOPER_KEY"])
     @results = client.videos_by(query: params[:search_term]).videos
     @group_id = params[:group_id]
 
@@ -45,6 +45,10 @@ class SongsController < ApplicationController
     end
   end
 
+  def next_song
+    group = Group.find(params[:group_id])
+    Group.playlist.play_next_song
+  end
 
   def events
     response.header['Content-Type'] = 'text/event-stream'
