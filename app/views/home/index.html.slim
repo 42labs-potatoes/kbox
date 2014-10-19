@@ -3,7 +3,7 @@
 /    - if flash[:notice]
 /      .notice
 /        = flash[:notice]
-.row
+.row#home-page
   .col-md-4.col-md-offset-1.col-xs-12
     .header-caption
       h1 music is meant to be shared and enjoyed together.
@@ -33,6 +33,7 @@
                 | Currently listening to:
                 br
               span.current-song
+                = image_tag "play_button.png"
                 = group.current_listening_to
 
 

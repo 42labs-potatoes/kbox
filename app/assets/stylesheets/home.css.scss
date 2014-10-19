@@ -4,11 +4,18 @@
 
 
 body {
+//  background-image: image-url("unsplash-kitsune-4.jpg");
+//  background-repeat: no-repeat;
+//  background-size: cover;
+  height: 800px;
+//  width: 100%;
+}
+
+#home-page {
   background-image: image-url("unsplash-kitsune-4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-//  width: 100%;
 }
 
   h1 {
@@ -20,7 +27,7 @@ body {
   .list-group-item {
     text-align: center;
     border: 2px solid black;
-    padding: 25px 75px 25px 75px;
+    padding: 25px 10px 25px 10px;
 
     p {
       color: #4a849f;
@@ -45,6 +52,9 @@ body {
   .list-group {
     .odd-item {
       .group-name a {
+        color: black;
+      }
+      span {
         color: black;
       }
     }
@@ -111,3 +121,6 @@ body {
     color: #4a849f;
   }
 
+  .current-song img {
+    margin-right: 5px;
+  }
