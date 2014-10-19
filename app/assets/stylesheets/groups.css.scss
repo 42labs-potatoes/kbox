@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #group {
-  padding-top: 40px;
 
   .group-name {
     color: #fff;
@@ -13,6 +12,9 @@
 
 h2 {
   text-align: left;
+  margin-bottom: 30px;
+  font-family: "Helvetica-Bold", sans-serif;
+  color: #fff;
 }
 
 .playlist-container {
@@ -25,13 +27,24 @@ h2 {
   }
 }
 
-.video-preview {
-  margin: 0 30px 15px 0;
+.playlist-item {
+  border-bottom: 1px solid #EBE6E6;
+
+  .video-preview {
+    margin: 15px 75px 15px 0;;
+  }
 }
 
+.video-player-wrapper > h1 {
+  margin-bottom: 15px;
+}
+
+#ytPlayer {
+  margin-top: 15px;
+}
 
 .title {
-  width: 300px;
+  width: 400px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -40,6 +53,45 @@ h2 {
 
 .playlist-wrapper {
   background-color: #32596B;
-  text-align: center;
-  padding: 100px;
+  padding: 55px 75px 75px 75px;
+
+  h1 {
+    font-family: "HelveticaNeue-Light", sans-serif;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+}
+
+.search-song-result-wrapper {
+  .form-control {
+    margin-bottom: 15px;
+  }
+  p:first-child {
+    margin-top: 50px;
+    font-size: 16px;
+    font-family: "HelveticaNeue-Light", sans-serif;
+  }
+}
+
+.search-song-result {
+  .thumbnail {
+    border: none;
+  }
+
+  .thumbnail > a {
+    font-size: 16px;
+    font-family: "HelveticaNeue-Light", sans-serif;
+  }
+  .thumbnail > img {
+    display: inline-block;
+    margin: 0 20px 15px 0;
+  }
+  .thumbnail > p {
+    float: right;
+    font-family: "HelveticaNeue-Light", sans-serif;
+    font-size: 14px;
+    color: #4e4e4e;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #223c48;
+  }
 }

@@ -1,5 +1,5 @@
-p#notice
-  = notice
+/p#notice
+/  = notice
 
 .row
   .col-md-12
@@ -18,6 +18,8 @@ p#notice
         .col-md-3.col-xs-3
           .search-song-result-wrapper
             .row
+              p
+                | Add to your group's playlist here!
               = form_tag("/songs/search?group_id=#{@group.id}", method: :get, remote: true)
                 = text_field_tag :search_term, nil, class: 'form-control', placeholder: 'Search'
             .search-song-result
@@ -26,7 +28,7 @@ p#notice
           .playlist-wrapper
             .row.video-player-wrapper
               h1
-                | SONG NAME
+                | Now playing: SONG NAME
               /iframe width="640" height="360" src="http://www.youtube.com/embed/#{"gS9o1FAszdk"}" frameborder="0" allowfullscreen
               hr
             .playlist-items
