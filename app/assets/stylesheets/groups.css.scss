@@ -45,10 +45,14 @@ h2 {
 
 .title {
   width: 400px;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #fff;
+  margin-right: 40px;
+}
+
+.upvote span {
+  margin-right: 15px;
 }
 
 .playlist-wrapper {

@@ -3,11 +3,11 @@
 /    - if flash[:notice]
 /      .notice
 /        = flash[:notice]
-    .container
-      .row
-        .col-md-6.col-xs-6
-          .header-caption
-            h1 music is meant to be shared
+.container
+  .row
+    .col-md-6.col-xs-6
+      .header-caption
+        h1 music is meant to be shared
 
           .search-field
             = form_tag('/home/search', method: :get)
@@ -33,3 +33,4 @@
                       | Currently listening to:
                       br
                       = group.current_listening_to
+
