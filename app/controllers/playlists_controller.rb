@@ -1,5 +1,6 @@
 class PlaylistsController < ApplicationController
   before_action :set_playlist, only: [:show, :edit, :update, :destroy]
+  include ActionController::Live
 
   # GET /playlists
   # GET /playlists.json
@@ -20,6 +21,15 @@ class PlaylistsController < ApplicationController
   # GET /playlists/1/edit
   def edit
   end
+
+  def next_song
+    group = Group.find(params[:group_id])
+    group.playlist.play_next_song
+    @songs = group.playlist.songs
+    $redis.publish('songs.create', @songs.to_json)
+    render json: {message: 'Yooo'}
+  end
+
 
   # POST /playlists
   # POST /playlists.json

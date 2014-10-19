@@ -1,6 +1,9 @@
 $(document).ready(function() {
   var makeVideoPlayer;
   var currentVideoIndex = 0;
+  var x = window.location.href;
+  var i = x.indexOf("groups/");
+  var groupId = x.substring(i+7,x.length);
   window.ytPlayerLoaded = false;
   makeVideoPlayer = function(video) {
     var player_wrapper;
@@ -26,8 +29,14 @@ $(document).ready(function() {
           'onStateChange': function(event) {
             if (event.data == YT.PlayerState.ENDED) {
               ++currentVideoIndex;
-              makeVideoPlayer($($('.video-preview')[currentVideoIndex]).data('uid'))
-            }
+              $.ajax({
+                type: 'POST',
+                url: '/groups/' + groupId + '/playlist/next_song'
+              }).done(function(msg){
+                makeVideoPlayer($($('.video-preview')[currentVideoIndex]).data('uid'));
+              });
+              return false;
+            };
           }
         }
       });
@@ -46,7 +55,6 @@ $(document).ready(function() {
   google.setOnLoadCallback(run);
 
   $('.video-preview').click(function() {
-    currentVideo = $(this)
     makeVideoPlayer($(this).data('uid'));
   });
 

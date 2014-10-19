@@ -19,8 +19,11 @@ class SongsController < ApplicationController
   def create
     response.headers["Content-Type"] = "text/javascript"
     playlist_id = Group.find(params[:group_id]).playlist.id
-    @song = Song.create(uid: params[:uid], playlist_id: playlist_id)
-    $redis.publish('songs.create', @song.to_json)
+    song = Song.create(uid: params[:uid], playlist_id: playlist_id)
+    # unless song.errors.empty?
+    @songs = Song.where(playlist_id: playlist_id)
+    $redis.publish('songs.create', @songs.to_json)
+    # end
 
     # respond_to do |format|
     #   format.js
@@ -43,26 +46,6 @@ class SongsController < ApplicationController
       format.html { redirect_to songs_url, notice: 'Song was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def next_song
-    group = Group.find(params[:group_id])
-    Group.playlist.play_next_song
-  end
-
-  def events
-    response.header['Content-Type'] = 'text/event-stream'
-    redis = Redis.new
-    redis.subscribe('songs.create') do |on|
-      on.message do |event, data|
-        response.stream.write("data: #{data}\n\n")
-      end
-    end
-  rescue IOError
-    logger.info 'Stream closed.'
-  ensure
-    redis.quit
-    response.stream.close
   end
 
   private
