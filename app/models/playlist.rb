@@ -7,12 +7,14 @@ class Playlist < ActiveRecord::Base
 
   def play_next_song
     song = songs.first
-    song.votes.destroy_all
-    binding.pry
-    song.update_columns(position: last_position+1, times: song.times+1)
-    binding.pry
-    # reposition_by_votes
-    normalize_song_positions
+    if (song)
+      song.votes.destroy_all
+      binding.pry
+      song.update_columns(position: last_position+1, times: song.times+1)
+      binding.pry
+      # reposition_by_votes
+      normalize_song_positions
+    end
   end
 
   def last_position

@@ -51,4 +51,5 @@
                       span
                         | view:
                         = song.times
-
+                      = link_to("/songs/#{song.id}", method: :delete, remote: true) do
+                        | DELETE

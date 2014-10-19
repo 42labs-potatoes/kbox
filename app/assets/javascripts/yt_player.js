@@ -106,6 +106,8 @@ $(document).ready(function() {
         + '<a rel="nofollow" href="/songs/' + song.id
         +'/votes?upvote=true" data-remote="true" data-method="post">up</a>'
         + '<span>view:' + song.times +'</span>'
+        + '<a rel="nofollow" href="/songs/' + song.id +'" '
+        + 'data-remote="true" data-method="delete">DELETE</a>'
         + '</div>'
         + '</div>');
     });

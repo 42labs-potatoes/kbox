@@ -25,10 +25,6 @@ class SongsController < ApplicationController
     result = Song.get_song_hash(song.playlist_id)
     $redis.publish('songs.create', result.to_json)
     # end
-
-    # respond_to do |format|
-    #   format.js
-    # end
   end
 
   def search
@@ -42,11 +38,15 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    @song.destroy
-    respond_to do |format|
-      format.html { redirect_to songs_url, notice: 'Song was successfully destroyed.' }
-      format.json { head :no_content }
+    response.headers["Content-Type"] = "text/javascript"
+    song = Song.find(params[:id])
+    if (song)
+      playlist_id = song.playlist_id
+      song.destroy
+      result = Song.get_song_hash(playlist_id)
     end
+    $redis.publish('songs.create', result.to_json)
+    render json: {message: 'removed'}
   end
 
   private
