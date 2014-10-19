@@ -7,7 +7,7 @@ var source = new EventSource(path);
 source.addEventListener('message', function(e) {
   var songs = $.parseJSON(e.data);
   var html = '';
-  console.log(songs)
+  console.log(songs);
   $('.playlist-item').remove();
 
   songs.forEach(function(song) {
@@ -23,7 +23,9 @@ source.addEventListener('message', function(e) {
       + '</p>'
       + '</div>'
       + '<div class="upvote">'
-      + 'Up'
+      + '<span>vote:' + song.vote + '</span>'
+			+ '<a rel="nofollow" href="/songs/' + song.id
+			+'/votes?upvote=true" data-remote="true" data-method="post">up</a>'
       + '</div>'
       + '</div>');
   });

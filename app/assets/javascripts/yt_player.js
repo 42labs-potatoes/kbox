@@ -68,7 +68,6 @@ $(document).ready(function() {
   $(window).on('resize', function() {
     var player;
     player = $('#ytPlayer');
-    console.log(player.height());
     if (player.size() > 0) {
       player.height(player.width() / 1.777777777);
     }

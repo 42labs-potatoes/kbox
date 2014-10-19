@@ -25,8 +25,9 @@ class PlaylistsController < ApplicationController
   def next_song
     group = Group.find(params[:group_id])
     group.playlist.play_next_song
-    @songs = group.playlist.songs
-    $redis.publish('songs.create', @songs.to_json)
+    # @songs = group.playlist.songs
+    result = Song.get_song_hash(group.playlist.id)
+    $redis.publish('songs.create', result.to_json)
     render json: {message: 'Yooo'}
   end
 

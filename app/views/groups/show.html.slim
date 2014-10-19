@@ -39,6 +39,11 @@ p#notice
                       img.image-rounded src="http://img.youtube.com/vi/#{song.uid}/1.jpg"
                     .title
                       p
-                        =song.name
+                        = song.name
                     .upvote
-                      |Up
+                      span
+                        | vote:
+                        = song.votes.count
+                      = link_to("/songs/#{song.id}/votes?upvote=true", method: :post, remote: true) do
+                        | up
+

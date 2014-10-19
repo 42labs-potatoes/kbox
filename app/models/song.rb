@@ -3,6 +3,7 @@ class Song < ActiveRecord::Base
   # YT_LINK_FORMAT = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&v\?]*).*/i
   default_scope { order('position ASC') }
   belongs_to :playlist
+  has_many :votes
 
   validates_presence_of :playlist_id, :uid
   validate :uid, presence: true
@@ -22,6 +23,19 @@ class Song < ActiveRecord::Base
       # self.position = all_song_positions.empty? ? 1 : all_song_positions.max + 1
       self.position = Playlist.find(playlist_id).last_position + 1
     end
+  end
+
+  def vote_count
+    votes.count
+  end
+
+  def self.get_song_hash(playlist_id)
+    result = []
+    Playlist.find(playlist_id).songs.each do |song|
+      song_hash = {uid: song.uid, id: song.id, name: song.name, vote: song.vote_count}
+      result << song_hash
+    end
+    result
   end
 
   private

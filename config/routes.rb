@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root to: "home#index"
   get 'home/search', to: 'home#search'
   get 'songs/search', to: 'songs#search'
-  resources :songs
+  resources :songs do
+    resource :votes, only: [:create]
+  end
 
 
 

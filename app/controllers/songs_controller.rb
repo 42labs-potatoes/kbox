@@ -21,8 +21,9 @@ class SongsController < ApplicationController
     playlist_id = Group.find(params[:group_id]).playlist.id
     song = Song.create(uid: params[:uid], playlist_id: playlist_id)
     # unless song.errors.empty?
-    @songs = Song.where(playlist_id: playlist_id)
-    $redis.publish('songs.create', @songs.to_json)
+    # @songs = Song.where(playlist_id: playlist_id)
+    result = Song.get_song_hash(song.playlist_id)
+    $redis.publish('songs.create', result.to_json)
     # end
 
     # respond_to do |format|
