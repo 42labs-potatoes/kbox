@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
 
   def events
     response.header['Content-Type'] = 'text/event-stream'
-    redis = Redis.new
+    redis_url = ENV["REDISTOGO_URL"] || "redis://127.0.0.1:6379/0/42-dj"
+    redis = Redis.new(url: redis_url)
     redis.subscribe('songs.create') do |on|
       on.message do |event, data|
         response.stream.write("data: #{data}\n\n")
