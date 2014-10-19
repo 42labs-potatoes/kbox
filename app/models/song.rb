@@ -21,7 +21,7 @@ class Song < ActiveRecord::Base
     unless self.position
       # all_song_positions = Playlist.find(playlist_id).songs.all.map(&:position)
       # self.position = all_song_positions.empty? ? 1 : all_song_positions.max + 1
-      self.position = Playlist.find(playlist_id).last_position + 1
+      self.position = Playlist.find(playlist_id).last_position_in_playlist + 1
     end
   end
 
