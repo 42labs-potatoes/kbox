@@ -3,6 +3,7 @@ $(document).ready(function() {
   var x = window.location.href;
   var i = x.indexOf("groups/");
   var groupId = x.substring(i+7,x.length);
+  var isPlaying = false
   window.ytPlayerLoaded = false;
   makeVideoPlayer = function(video) {
     var player_wrapper;
@@ -49,14 +50,18 @@ $(document).ready(function() {
 
 
   var run = function() {
-    $('.video-preview').first().click();
+//    $('.video-preview').first().click();
+    if ($('.video-preview').length !== 0) {
+      makeVideoPlayer($('.video-preview').data('uid'));
+      isPlaying = true;
+    }
   };
 
   google.setOnLoadCallback(run);
 
-  $('.video-preview').click(function() {
-    makeVideoPlayer($(this).data('uid'));
-  });
+//  $('.video-preview').click(function() {
+//    makeVideoPlayer($(this).data('uid'));
+//  });
 
 //  setInterval(function(){
 //    $('.video-preview').off("click");
@@ -72,5 +77,42 @@ $(document).ready(function() {
       player.height(player.width() / 1.777777777);
     }
   });
+
+
+  var x = window.location.href;
+  var i = x.indexOf("groups/");
+  var groupId = x.substring(i+7,x.length);
+  var path = '/groups/' + groupId + '/playlist/songs/events';
+  var source = new EventSource(path);
+  source.addEventListener('message', function(e) {
+    var songs = $.parseJSON(e.data);
+    var html = '';
+    $('.playlist-item').remove();
+
+    songs.forEach(function(song) {
+      html += ('<div class="playlist-item">'
+        + '<div class="video-preview" data-uid='
+        + song.uid +'>'
+        + '<img class="image-rounded" src="http://img.youtube.com/vi/'
+        + song.uid + '/1.jpg">'
+        + '</div>'
+        + '<div class="title">'
+        + '<p>'
+        + song.name
+        + '</p>'
+        + '</div>'
+        + '<div class="upvote">'
+        + '<span>vote:' + song.vote + '</span>'
+        + '<a rel="nofollow" href="/songs/' + song.id
+        +'/votes?upvote=true" data-remote="true" data-method="post">up</a>'
+        + '<span>view:' + song.times +'</span>'
+        + '</div>'
+        + '</div>');
+    });
+
+    $('.playlist-items').append(html);
+    if (! isPlaying) run();
+  });
+
 
 })
