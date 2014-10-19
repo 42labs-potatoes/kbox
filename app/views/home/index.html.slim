@@ -28,7 +28,7 @@
           li.list-group-item
             .group-name
               = link_to group.name, group_path(group)
-            - unless group.playlist.songs.empty?
+            - if group.current_song
               p
                 | Currently listening to:
                 br

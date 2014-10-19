@@ -7,6 +7,10 @@ class Group < ActiveRecord::Base
 
 
   def current_listening_to
-    playlist.songs.find_by(position: 1).name
+    cuurent_song.name if current_song
+  end
+
+  def current_song
+    playlist.songs.find_by(position: 1)
   end
 end
