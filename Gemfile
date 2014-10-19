@@ -34,6 +34,7 @@ gem 'redis'
 # gem 'debugger', group: [:development, :test]
 
 group :production do
+  gem 'rails_12factor'
   gem 'pg'
 end
 
