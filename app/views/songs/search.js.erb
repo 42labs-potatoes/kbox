@@ -2,6 +2,7 @@
   $('.playlist-container').html('no result');
   alert('oikok');
 <% else %>
+  $('.thumbnail').remove();
   <% @results.each do |result| %>
     var html = '<div class="thumbnail">'
            + '<img class="image-rounded" src="http://img.youtube.com/vi/<%= result.video_id.split(//).last(11).join %>/1.jpg"></img>'
